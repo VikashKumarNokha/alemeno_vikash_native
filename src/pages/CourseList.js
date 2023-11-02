@@ -1,19 +1,23 @@
-import { StyleSheet, Text, View, Image, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'react-native'
 import React from 'react'
 
-const CourseList = () => {
+const CourseList = ({navigation}) => {
+
+
 
   return (
     <View> 
          <Text style={styles.courseHeading} >
               WELCOME TO LMS
          </Text> 
-         <ScrollView>  
-       <View style={styles.courseContainer} >
+         <ScrollView> 
+        <TouchableOpacity onPress = {()=>{ navigation.navigate("CourseDetails")} } >    
+       <View style={styles.courseContainer}  >
             <Text style={styles.courseContainer_Heding} >Introduction to React Native</Text>
             <Text style={styles.courseContainer_By} >By</Text>
             <Text style={styles.courseContainer_teacher} >Vikash Kumar Singh</Text>
        </View>
+       </TouchableOpacity>
        <View style={styles.courseContainer} >
             <Text style={styles.courseContainer_Heding} >Introduction to React Native</Text>
             <Text style={styles.courseContainer_By} >By</Text>
